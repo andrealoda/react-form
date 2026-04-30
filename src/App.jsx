@@ -17,6 +17,11 @@ function App() {
   setNewArticle('')
  }
 
+ function removeArticle(i) {
+  const filteredArticles = article.filter((singleArticle, index) => index !== i)
+  setArticle(filteredArticles)
+ }
+
   return (
     <>
       <div className="container">
@@ -29,7 +34,7 @@ function App() {
           {article.map((inList, i) => (
             <div className='card glass-card' key={i}>
               <div >{inList}</div>
-              <button className="bin">REMOVE</button>
+              <button className="bin" onClick={() => removeArticle(i)}>REMOVE</button>
             </div>
           ))}
         </div>
