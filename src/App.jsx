@@ -1,17 +1,17 @@
 import { useState } from 'react'
 
 
-const articlesList = [
-  'articolo 1',
-  'articolo 2',
-  'articolo 3',
-]
-
 function App() {
 
 
   const [article, setArticle] = useState(['articolo 1', 'articolo 2', 'articolo 3']);
+  const [newArticle, setNewArticle] = useState('')
 
+ function handleSubmit(e) {
+  e.preventDefault()
+  setArticle([...article, newArticle])
+  setNewArticle('')
+ }
 
   return (
     <>
@@ -22,17 +22,23 @@ function App() {
 
 
         <div className="article-box">
-          {articlesList.map((inList, i) => (
+          {article.map((inList, i) => (
             <div className='card glass-card' key={i}>
               <div >{inList}</div>
             </div>
           ))}
         </div>
 
+        <form action="" onSubmit={handleSubmit}>
 
+          <div className="addArticleForm">
+            <input type="text" className='form-control' value={newArticle} onChange={e => setNewArticle(e.target.value)} placeholder='add your next article' />
+            <button className='btn glass-card'>ADD</button>
+
+          </div>
+        </form>
 
       </div>
-
     </>
   )
 }
