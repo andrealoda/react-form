@@ -15,15 +15,23 @@ function App() {
 
   return (
     <>
-<div className="container glass-card">
-<h1 className="listTitle">List of articles</h1>
-<ul>
-  {articlesList.map((inList, i) => (
-    <li>{inList}</li>
-  ))}
-</ul>
+      <div className="container">
+        <div className="title-bar">
+          <h1 className="listTitle">List of articles</h1>
+        </div>
 
-</div>
+
+        <div className="article-box">
+          {articlesList.map((inList, i) => (
+            <div className='card glass-card' key={i}>
+              <div >{inList}</div>
+            </div>
+          ))}
+        </div>
+
+
+
+      </div>
 
     </>
   )

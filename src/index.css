@@ -4,6 +4,31 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color:aliceblue;
+}
+
+.title-bar {
+    text-align: center;
+    padding: 2rem;
+}
+
+
+.article-box {
+        display: flex;
+    justify-content: center;
+    
+}
+
+.card {
+    width: fit-content;
+    height: fit-content;
+    margin: 2rem;
+    padding: 2rem;
+
+
+}
+
 
 .glass-card {
     background: rgba(255, 255, 255, 0.05);
@@ -15,4 +40,8 @@
     border-radius: 16px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     /* Ombra morbida */
+}
+
+li {
+    list-style: none;
 }
