@@ -5,7 +5,15 @@
 }
 
 body {
-    background-color: aliceblue;
+    background: #28596d;
+
+}
+
+.container {
+    margin: 3rem;
+    padding: 2rem;
+    border: 2px solid grey;
+    color: aliceblue;
 }
 
 .title-bar {
@@ -13,6 +21,9 @@ body {
     padding: 2rem;
 }
 
+.listTitle {
+    font-size: 4rem;
+}
 
 .article-box {
     display: flex;
@@ -22,14 +33,21 @@ body {
 }
 
 .card {
-    width: fit-content;
-    height: fit-content;
+    max-width: 500px;
+    min-width: 100px;
     margin: 2rem;
     padding: 2rem;
-
-
+    text-align: justify;
+    position: relative;
 }
 
+.bin {
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+    min-width: 20%;
+    cursor: pointer;
+    }
 
 .glass-card {
     background: rgba(255, 255, 255, 0.05);
@@ -47,11 +65,18 @@ body {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    
+}
+
+.form-control {
+    padding: 0.5rem 2rem;
 }
 
 .btn {
     padding: 1rem;
     border-radius: 1rem;
     border: 0;
+    color: aliceblue;
+    cursor: pointer;
 
 }

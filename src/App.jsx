@@ -4,7 +4,11 @@ import { useState } from 'react'
 function App() {
 
 
-  const [article, setArticle] = useState(['articolo 1', 'articolo 2', 'articolo 3']);
+  const [article, setArticle] = useState([
+    'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur omnis sit doloribus commodi cumque. Dolores illum harum saepe porro reprehenderit consectetur, excepturi ipsam, itaque, quo non quasi delectus placeat tempora.', 
+    'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur omnis sit doloribus commodi cumque. Dolores illum harum saepe porro reprehenderit consectetur, excepturi ipsam, itaque, quo non quasi delectus placeat tempora.', 
+    'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur omnis sit doloribus commodi cumque. Dolores illum harum saepe porro reprehenderit consectetur, excepturi ipsam, itaque, quo non quasi delectus placeat tempora.'
+  ]);
   const [newArticle, setNewArticle] = useState('')
 
  function handleSubmit(e) {
@@ -17,7 +21,7 @@ function App() {
     <>
       <div className="container">
         <div className="title-bar">
-          <h1 className="listTitle">List of articles</h1>
+          <h1 className="listTitle">A simple list of articles</h1>
         </div>
 
 
@@ -25,6 +29,7 @@ function App() {
           {article.map((inList, i) => (
             <div className='card glass-card' key={i}>
               <div >{inList}</div>
+              <button className="bin">REMOVE</button>
             </div>
           ))}
         </div>
@@ -39,7 +44,9 @@ function App() {
         </form>
 
       </div>
-    </>
+
+
+   </>
   )
 }
 
