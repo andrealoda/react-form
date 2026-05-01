@@ -1,26 +1,19 @@
 import { useState } from 'react'
+import ArticleAdderForm from './components/FormApp'
 
 
 function App() {
 
 
-  const [article, setArticle] = useState([
-    'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur omnis sit doloribus commodi cumque. Dolores illum harum saepe porro reprehenderit consectetur, excepturi ipsam, itaque, quo non quasi delectus placeat tempora.', 
-    'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur omnis sit doloribus commodi cumque. Dolores illum harum saepe porro reprehenderit consectetur, excepturi ipsam, itaque, quo non quasi delectus placeat tempora.', 
-    'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur omnis sit doloribus commodi cumque. Dolores illum harum saepe porro reprehenderit consectetur, excepturi ipsam, itaque, quo non quasi delectus placeat tempora.'
-  ]);
+  const [article, setArticle] = useState([]);
   const [newArticle, setNewArticle] = useState('')
 
- function handleSubmit(e) {
-  e.preventDefault()
-  setArticle([...article, newArticle])
-  setNewArticle('')
- }
 
- function removeArticle(i) {
-  const filteredArticles = article.filter((singleArticle, index) => index !== i)
-  setArticle(filteredArticles)
- }
+
+  function removeArticle(i) {
+    const filteredArticles = article.filter((singleArticle, index) => index !== i)
+    setArticle(filteredArticles)
+  }
 
   return (
     <>
@@ -39,19 +32,17 @@ function App() {
           ))}
         </div>
 
-        <form action="" onSubmit={handleSubmit}>
 
-          <div className="addArticleForm">
-            <input type="text" className='form-control' value={newArticle} onChange={e => setNewArticle(e.target.value)} placeholder='add your next article' />
-            <button className='btn glass-card'>ADD</button>
+        <ArticleAdderForm newArticle={newArticle}
+          setNewArticle={setNewArticle}
+          article={article}
+          setArticle={setArticle} />
 
-          </div>
-        </form>
 
       </div>
 
 
-   </>
+    </>
   )
 }
 
