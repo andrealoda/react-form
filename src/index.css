@@ -4,9 +4,17 @@
     box-sizing: border-box;
 }
 
+.jetbrains {
+  font-family: 'JetBrains Mono Variable', monospace;
+}
+
+.geist {
+  font-family: 'Geist Mono Variable', monospace;
+}
+
+
 body {
     background: #28596d;
-
 }
 
 .container {
@@ -79,4 +87,9 @@ body {
     color: aliceblue;
     cursor: pointer;
 
+}
+
+.form-control {
+    border: none;
+    border-radius: 1rem;
 }
