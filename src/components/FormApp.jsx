@@ -1,9 +1,17 @@
 export default function ArticleAdderForm ({ newArticle, setNewArticle, article, setArticle }) {
 
  function handleSubmit(e) {
-  e.preventDefault()
-  setArticle([...article, newArticle])
-  setNewArticle('')
+  e.preventDefault();
+
+if (newArticle.trim() === '') return;
+
+const articleObject = {
+  id: crypto.randomUUID(),
+  text: newArticle
+};
+
+  setArticle([...article, articleObject]);
+  setNewArticle('');
  }
 
     return (
